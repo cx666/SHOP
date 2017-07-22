@@ -1,7 +1,10 @@
 package org.fkit.ebuy.controller;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.SimpleEmail;
 import org.fkit.ebuy.controller.UserController;
 import org.fkit.ebuy.domain.User;
 import org.fkit.ebuy.service.UserService;
@@ -51,8 +54,8 @@ public class UserController {
 			}
 			else{
 				// 注册失败，设置失败提示信息，并跳转到注册页面
-				mv.addObject("message", "注册失败，请重新注册!");
-				mv.setViewName("register");
+				mv.addObject("message", "注册成功，请登录!");
+				mv.setViewName("loginForm");
 			}
 			return mv;
 	 }
@@ -76,45 +79,51 @@ public class UserController {
 		}
 		return mv;
 	}
-	@RequestMapping(value="/findpassword",method=RequestMethod.POST)
-	public ModelAndView find(String username,
-			String loginname,
-			String email,
-			String phonenumber,
-		ModelAndView mv,
-		HttpSession session){
-		User user1=userService.protect(username, loginname,email,phonenumber);
-		if(user1!=null){
-			session.setAttribute("user1", user1);
-			mv.setViewName("readuser");
+	
+	
+	@RequestMapping(value="/find")
+		 public ModelAndView find(String loginname,String email,ModelAndView mv,HttpSession session,HttpServletResponse response) throws Exception{		
+			User user=userService.findPasswordEmail(loginname, email);
+			if(user!=null){
+				StringBuffer url=new StringBuffer();
+				StringBuilder builder=new StringBuilder();
+				builder.append("");
+				url.append("您的密码是："+user.getPassword()+"");
+				builder.append("");
+				builder.append(""+url+"");
+				
+				System.out.print("builder输出");
+				builder.append("");
+				SimpleEmail sendemail=new SimpleEmail();
+				sendemail.setHostName("smtp.163.com");
+				sendemail.setAuthentication("15162187260@163.com","cx6666");
+				sendemail.setCharset("UTF-8");
+				try{
+					sendemail.setCharset("UTF-8");
+					sendemail.addTo(email);
+					sendemail.setFrom("15162187260@163.com");
+					sendemail.setSubject("找回密码");
+					sendemail.setMsg(builder.toString());
+					sendemail.send();
+					System.out.println(builder.toString());
+				}catch(EmailException e){
+					e.printStackTrace();
+					System.out.print("抛出异常");
+				}
+				
+			//	response.sendRedirect("loginForm");
+				System.out.print("您的密码已发送至您的邮箱，请注意查收");
+				mv.setViewName("findpassword");
+			
+			}else{
+				
+				response.getWriter().println("密码获取失败");
+				System.out.print("密码获取失败");
+			}	
+			return mv;
 		}
-		else{
-			mv.addObject("message","验证失败，请重新输入！");
-			mv.setViewName("findpassword");
-		}
-		return mv;
-	}
-	@RequestMapping(value="/newpwd",method=RequestMethod.POST)
-	public ModelAndView update(
-			String loginname,
-			String username,
-			String email,
-			String phonenumber,
-			String password,	
-		ModelAndView mv,
-		HttpSession session){
-		User user2=userService.update(loginname,username,email,phonenumber,password);
-//		if(user2!=null){
-//			session.setAttribute("user2", user2);
-//			
-//		}
-//		else{
-//			mv.addObject("message","修改密码失败！");
-//			mv.setViewName("newpassword");
-//		}
-		mv.setViewName("success");
-		return mv;
-	}
+
+	
 	 
 }
 	

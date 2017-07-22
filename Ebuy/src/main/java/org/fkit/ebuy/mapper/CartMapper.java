@@ -23,8 +23,8 @@ public interface CartMapper {
 	@Select(" select * from tb_cart where username=#{username} ")
 	List<Cart> findAll(String username);
 	
-	@Select("insert into tb_cart(id,name,price,image,number,username) values(#{id},#{name},#{price},#{image},#{number},#{username})")
-	Cart insertcart(@Param("id")int id,@Param("name")String name,@Param("price")String price,@Param("image")String image,@Param("number")String number,
+	@Select("insert into tb_cart(product_id,user_id,id,name,price,image,number,username) values(#{user_id},#{product_id},#{id},#{name},#{price},#{image},#{number},#{username})")
+	Cart newcart(@Param("user_id")int user_id,@Param("product_id")int product_id,@Param("id")int id,@Param("name")String name,@Param("price")String price,@Param("image")String image,@Param("number")String number,
 			@Param("username")String username);
 	
 	@Delete("delete from tb_cart where id=#{id}")

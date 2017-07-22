@@ -17,9 +17,16 @@ public interface UserService {
 
 	User register(String loginname,String password,String username,String email ,String phonenumber);
 
-	User protect(String username, String loginname, String email, String phonenumber);
+
+	User findPasswordEmail(String loginname, String email);
 
 	User update(String username, String loginname, String email, String phonenumber,String password);
+
+
+
+	
+
+	
 
 	
 	

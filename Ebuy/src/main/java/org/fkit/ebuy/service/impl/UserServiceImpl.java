@@ -40,9 +40,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User protect(String username, String loginname, String email, String phonenumber) {
+	public User findPasswordEmail(String loginname, String email) {
 		// TODO Auto-generated method stub
-		return userMapper.findPassword(username, loginname,email,  phonenumber);
+		return userMapper.findPassword(loginname,email);
 	}
 
 	@Override

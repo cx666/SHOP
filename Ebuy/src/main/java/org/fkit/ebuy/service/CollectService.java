@@ -17,7 +17,7 @@ public interface CollectService {
 	 * @return Book对象集合
 	 * */
 
-	Collect newcollect(int id,String goodsname, String price, String image, String descripts, String username);
+	Collect newcollect(int user_id,int product_id,int id,String goodsname, String price, String image, String descripts, String username);
 
 	List<Collect> getAll(String username);
 

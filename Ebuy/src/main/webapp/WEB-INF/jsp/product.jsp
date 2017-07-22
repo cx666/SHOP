@@ -120,8 +120,7 @@
             </div>
             </br>      
             <div class="col-md-5 col-md-offset-1">
-                 <!-- <a href="save?save_id=${product.id}" type="button" class="btn btn-info" role="button" > 添加购物车</a> -->
-                 <a href="cart.jsp">添加购物车<</a>
+                 <button type="submit" class="btn btn-danger btn-lg " >添加购物车</button>
             </div> 
             </br>      
             <div class="col-md-5 col-md-offset-1">

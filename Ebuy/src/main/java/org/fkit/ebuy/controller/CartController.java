@@ -46,12 +46,14 @@ public class CartController {
 	@RequestMapping(value="/newcart")
 	 public ModelAndView newcart(int id,
 			 String name,
+			 int product_id,
+			 int user_id,
 				String price, 
 				String image, 
 				String number,
 				String username,
 			   ModelAndView mv ){
-		Cart newcart = cartService.newcart(id,name, price,image,number,username);
+		Cart newcart = cartService.newcart(product_id,user_id,id,name, price,image,number,username);
 		mv.setViewName("product");
 		return mv;
 	}

@@ -40,13 +40,15 @@ public class CollectController {
 	}
 	@RequestMapping(value="/newcollect")
 	 public ModelAndView newcollect(int id,
+			 int product_id,
+			 int user_id,
 			 String goodsname,
 				String price, 
 				String image, 
 				String descripts,
 				String username,
 			   ModelAndView mv ){
-		Collect newcollect = collectService.newcollect(id,goodsname, price,image,descripts,username);
+		Collect newcollect = collectService.newcollect(product_id,user_id,id,goodsname, price,image,descripts,username);
 		mv.setViewName("product");
 		return mv;
 	}

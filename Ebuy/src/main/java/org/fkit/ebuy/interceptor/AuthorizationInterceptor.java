@@ -14,14 +14,14 @@ public class AuthorizationInterceptor  implements HandlerInterceptor {
 
 	// 不拦截"/loginForm"和"/login"请求
 	private static final String[] IGNORE_URI = {"/login","/loginForm", "/register", "/main",
-			"/findpassword","/newpassword","/newpwd","/adminlogin","/adminloginForm","/adminmain" ,
+			"/findpassword","/find","/newpassword","/newpwd","/adminlogin","/adminloginForm","/adminmain" ,
 			"/addproduct","/lookorder","/updateorder","/updatestock","/newstock"};
 	
 	 /** 
      * 该方法将在整个请求完成之后执行， 主要作用是用于清理资源的，
      * 该方法也只能在当前Interceptor的preHandle方法的返回值为true时才会执行。 
      */  
-	@Override
+@Override
 	public void afterCompletion(HttpServletRequest request,
 			HttpServletResponse response, Object handler, Exception exception)
 			throws Exception {
@@ -32,7 +32,7 @@ public class AuthorizationInterceptor  implements HandlerInterceptor {
      * 该方法将在Controller的方法调用之后执行， 方法中可以对ModelAndView进行操作 ，
      * 该方法也只能在当前Interceptor的preHandle方法的返回值为true时才会执行。 
      */
-	@Override
+@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response,
 			Object handler, ModelAndView mv) throws Exception {
 		System.out.println("AuthorizationInterceptor postHandle --> ");
@@ -77,5 +77,4 @@ public class AuthorizationInterceptor  implements HandlerInterceptor {
         return flag;
 		
 	}
-
 }

@@ -52,14 +52,7 @@ public class User {
 				+ password + ", username=" + username + ",email=" + email + ",phonenumber=" + phonenumber +"]";
 	}
 
-//	public int getId() {
-//		return id;
-//	}
-//
-//
-//	public void setId(int id) {
-//		this.id = id;
-//	}
+
 
 
 	public String getPhonenumber() {

@@ -20,8 +20,8 @@ public interface CollectMapper {
 	@Select(" select * from tb_collect where username=#{username}")
 	List<Collect> findAll(String username);
 	
-	@Select("insert into tb_collect(id,goodsname,price,image,descripts,username) values(#{id},#{goodsname},#{price},#{image},#{descripts},#{username})")
-	Collect insertcollect(@Param("id")int id,@Param("goodsname")String goodsname,@Param("price")String price,@Param("image")String image,
+	@Select("insert into tb_collect(user_id,id,goodsname,price,image,descripts,username) values(#{id},#{goodsname},#{price},#{image},#{descripts},#{username})")
+	Collect insertcollect(@Param("user_id")int user_id,@Param("product_id")int product_id,@Param("id")int id,@Param("goodsname")String goodsname,@Param("price")String price,@Param("image")String image,
 			@Param("descripts")String descripts,@Param("username")String username);
    
 	@Delete("delete from tb_collect where id=#{id}")

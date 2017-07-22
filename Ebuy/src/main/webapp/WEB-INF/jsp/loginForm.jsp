@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,7 +43,7 @@
 						<hr>
 			       </div>
 
-	<form class="form-horizontal" action="login" method="post" >
+	<form class="form-horizontal" id="loginForm" action="login" method="post" >
 		<div class="col-md-6 col-md-offset-3 " >
 	    <font color="red">${requestScope.message }</font>
      <div class="input-group input-group-lg">
@@ -56,12 +57,14 @@
   
         </div>
         <br>
-				<div class="form-group">
-					<div class="col-md-offset-2 col-md-10">
-						<div class="checkbox">
-							 <label><input type="checkbox" />记住密码</label>
-						</div>
-					</div>
+				
+				<div>	
+							
+   							<input type="checkbox" id="remember" name="remember">
+                  			记住密码 
+						
+						
+					
 				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-4 col-sm-8">
@@ -87,10 +90,12 @@
 
 
 
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="jquery/jquery-3.2.1.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="js/bootstrap.js"></script>
+<script src="js/rememberpwd.js"></script>
 </body>
 </html>

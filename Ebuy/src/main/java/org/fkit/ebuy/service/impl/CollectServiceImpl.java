@@ -37,9 +37,9 @@ public class CollectServiceImpl implements CollectService {
 	}
 
 	@Override
-	public Collect newcollect(int id,String goodsname, String price, String image, String descripts, String username) {
+	public Collect newcollect(int product_id,int user_id,int id,String goodsname, String price, String image, String descripts, String username) {
 		// TODO Auto-generated method stub
-		return collectMapper.insertcollect(id,goodsname, price,image,descripts,username);
+		return collectMapper.insertcollect(user_id,product_id,id,goodsname, price,image,descripts,username);
 	}
 
 	@Override

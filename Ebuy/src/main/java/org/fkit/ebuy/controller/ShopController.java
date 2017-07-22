@@ -35,23 +35,23 @@ public class ShopController {
 		// 跳转到main页面
 		return "shop";
 	}
-	@RequestMapping(value="/canvasbag")
+	@RequestMapping(value="/bag")
 	 public String canvasbag(Model model){
 		// 获得所有图书集合
 		List<Product> canvasbag_list = shopService.getAll4();
 		// 将图书集合添加到model当中
 		model.addAttribute("canvasbag_list", canvasbag_list);
 		// 跳转到main页面
-		return "canvasbag";
+		return "bag";
 	}
-	@RequestMapping(value="/Tshirt")
+	@RequestMapping(value="/shoe")
 	 public String Tshirt (Model model){
 		// 获得所有图书集合
 		List<Product> Tshirt_list = shopService.getAll1();
 		// 将图书集合添加到model当中
 		model.addAttribute("Tshirt_list", Tshirt_list);
 		// 跳转到main页面
-		return "Tshirt";
+		return "shoe";
 	}
 	@RequestMapping(value="/phoneshell")
 	 public String phoneshell(Model model){
@@ -62,14 +62,14 @@ public class ShopController {
 		// 跳转到main页面
 		return "phoneshell";
 	}
-	@RequestMapping(value="/sweater")
+	@RequestMapping(value="/pant")
 	 public String sweater(Model model){
 		// 获得所有卫衣集合
 		List<Product> sweater_list = shopService.getAll2();
 		// 将卫衣集合添加到model当中
 		model.addAttribute("sweater_list", sweater_list);
 		// 跳转到main页面
-		return "sweater";
+		return "pant";
 	}
 	@RequestMapping(value="/product")
 	 public String look(int id,

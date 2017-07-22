@@ -9,6 +9,8 @@ public class Product {
      private String image2;
      private String image3;
      private String image4;
+     private int comment_id;
+     private int order_id;
      private int stock; //库存
      private int sales;  //销量
      private int typeid;
@@ -85,6 +87,18 @@ public class Product {
 	}
 	public void setTypeid(int typeid) {
 		this.typeid = typeid;
+	}
+	public int getOrder_id() {
+		return order_id;
+	}
+	public void setOrder_id(int order_id) {
+		this.order_id = order_id;
+	}
+	public int getComment_id() {
+		return comment_id;
+	}
+	public void setComment_id(int comment_id) {
+		this.comment_id = comment_id;
 	}
 
      

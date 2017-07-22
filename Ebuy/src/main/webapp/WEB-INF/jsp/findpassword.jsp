@@ -41,7 +41,7 @@
 						</div>
 						<hr>
 					</div>
-		  	 <form action="findpassword" method="post"> 
+		  	 <form action="find" method="post"> 
 		  	   <font color="red">${requestScope.message }</font>
 		  	 <div class="col-md-12 ">
 		  	     <div class="row">
@@ -52,31 +52,15 @@
                            </div> 
 		   		        </div>
 		   		     
-		   		        <div class="form-group">
-                           <div class="col-md-3">  用 户 姓名：</div>
-                           <div class="col-md-9">
-                                   <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="请输入你的姓名" value="">
-                           </div> 
-		   		        </div>
+		   		        
 		   		        <div class="form-group">
                            <div class="col-md-3">  邮箱地址：</div>
                            <div class="col-md-9">
                                    <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="请输入注册使用的邮箱" value="">
                            </div> 
 		   		        </div>
-		   		        <div class="form-group">
-                           <div class="col-md-3">  联系电话：</div>
-                           <div class="col-md-9">
-                                   <input type="text" name="phonenumber" id="phonenumber" tabindex="1" class="form-control" placeholder="请输入注册使用的电话号码" value="">
-                           </div> 
-		   		        </div>
-		   		    	 <!--     <div class="form-group">
-                           <div class="col-md-3">  设置新密码：</div>
-                           <div class="col-md-9">
-                                   <input type="text" name="newpassword" id="newpassword" tabindex="1" class="form-control" placeholder="请输入密码" value="">
-                           </div> 
-		   		        </div>
-		   		        -->
+		   		       
+		   		        
 				        <div class="form-group">
 							<div class="row">
 								<div class="col-sm-5 col-sm-offset-4">

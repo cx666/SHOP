@@ -9,8 +9,9 @@ public class Collect {
     private String image;
     private String descripts;
     private String username;
-  
- 
+    private int user_id;
+    @SuppressWarnings("unused")
+	private int product_id;
 	public int getId() {
 		return id;
 	}
@@ -62,6 +63,12 @@ public class Collect {
 
 	public void setPrice(String price) {
 		this.price = price;
+	}
+	public int getUser_id() {
+		return user_id;
+	}
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
 
     

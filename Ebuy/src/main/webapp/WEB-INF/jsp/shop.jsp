@@ -67,9 +67,9 @@
                 </a>
                 
             </li>
-            <hr>
            
-            <hr>
+           
+            </hr>
             <li class="dropdown">
                 <a href="canvasbag" class="dropdown-toggle" data-toggle="dropdown">
  						短裤
@@ -79,7 +79,7 @@
                     <li><a href="canvasbag">帆布袋</a></li>
                 </ul>
             </li>
-            <hr>
+            </hr>
             <li class="dropdown">
                 <a href="phoneshell" class="dropdown-toggle" data-toggle="dropdown">
  				皮包

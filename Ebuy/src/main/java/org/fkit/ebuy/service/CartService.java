@@ -17,7 +17,7 @@ public interface CartService {
 	 * */
 	List<Cart> getAll(String username);
 
-	Cart newcart(int id,String name, String price, String image, String number,  String username);
+	Cart newcart(int user_id,int product_id,int id,String name, String price, String image, String number,  String username);
 
 	void decart(int id);
 

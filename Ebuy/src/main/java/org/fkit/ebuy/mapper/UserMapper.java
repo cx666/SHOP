@@ -11,16 +11,18 @@ public interface UserMapper {
 	 * @param String password
 	 * @return 找到返回User对象，没有找到返回null
 	 * */
+	/* 通过select注解从数据库中读取相应的值，再通过param注解赋值给已定义的变量*/
+	/*登录*/
 	@Select("select * from tb_user where loginname = #{loginname} and password = #{password}")
 	User findWithLoginnameAndPassword(@Param("loginname")String loginname,
 			@Param("password") String password);
-
+	/*注册*/
 	@Select("insert into tb_user(loginname,password,username,email,phonenumber) values(#{loginname},#{password},#{username},#{email},#{phonenumber})")
 	User insertuser(@Param("loginname")String loginname,@Param("password")String password,@Param("username")String username,
 			@Param("email")String email,@Param("phonenumber")String phonenumber);
-	
-	@Select("select * from tb_user where loginname=#{loginname} and username=#{username} and email=#{email} and phonenumber=#{phonenumber}")
-	User findPassword(@Param("loginname")String loginname,@Param("username")String username,@Param("email")String email,@Param("phonenumber")String phonenumber);
+	/*找回密码*/
+	@Select("select * from tb_user where loginname=#{loginname} and email=#{email}")
+	User findPassword(@Param("loginname")String loginname,@Param("email")String email);
 	
 	@Select("update tb_user set  loginname=#{loginname} , username=#{username} ,email=#{email} , phonenumber=#{phonenumber} ,password=#{password} where loginname=#{loginname}")
 	User updatepassword(@Param("loginname")String loginname,@Param("username")String username,@Param("email")String email,@Param("phonenumber")String phonenumber,@Param("password")String password);

@@ -36,12 +36,11 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public Cart newcart(int id,String name, String price, String image, String number,  String username) {
+	public Cart newcart(int user_id,int product_id,int id,String name, String price, String image, String number,  String username) {
 		// TODO Auto-generated method stub
-		return cartMapper.insertcart(id,name, price,image,number,username);
+		return cartMapper.newcart(product_id,user_id,id,name, price,image,number,username);
 
 	}
-
 	@Override
 	public void decart(int id) {
 		// TODO Auto-generated method stub

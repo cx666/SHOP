@@ -85,7 +85,7 @@
     </div>
     
     <div class="col-md-3 col-sm-3 col-lg-3 col-xs-3 col-md-offset-3">
-    	<h3 >总金额：<strong>¥19.8</strong></h3>
+    	<h3 >总金额：<strong>¥***</strong></h3>
     </div>
     <div class="col-md-2 col-sm-3 col-lg-2 col-xs-3">
     	 <button class="btn btn-danger btn-lg ">结算</button>   
